@@ -2,6 +2,8 @@ import sys
 import importlib
 
 PATH_TO_MODULE = 'src.TaskSolution.'
+FILE_MODULE_CLS = 'src\TaskSolution\List Of Modules With Class.txt'
+FILE_MODULE_FUNC = 'src\TaskSolution\List Of Modules With Functions.txt'
 
 class Singltone(type):
     _instances = {}
@@ -13,6 +15,7 @@ class Singltone(type):
 
 class App(metaclass=Singltone):
     def __init__(self):
+        self.__infomodules = [FILE_MODULE_CLS, FILE_MODULE_FUNC]
         print('Programm run')
 
     def exit_programm(self):
@@ -28,11 +31,10 @@ class App(metaclass=Singltone):
         print('Stopped\n')
 
     def call_function(self, name_module, name_function):
-        pass
-        # module = importlib.import_module(PATH_TO_MODULE + name_module)
-        # cls = getattr(module, name_class)
-        # instance = cls()
-        # instance.execute()
+        module = importlib.import_module(PATH_TO_MODULE + name_module)
+        func = getattr(module, name_function)
+        func()
+        
     
     def create_object(self, cls_info):
         print('Started: ', 'module -', cls_info[0], 'Class - ', cls_info[1])
@@ -48,12 +50,16 @@ class App(metaclass=Singltone):
 
     def get_options(self):
         options = { 'q' : ['exit', 'function'] }
-        
-        with open('src\TaskSolution\List Of Modules With Class.txt', 'r') as file:
-             self.__modules = file.readlines()
-
+        numb_options = 0
+        self.__modules = []
+        for file in self.__infomodules:
+            with open(file, 'r') as file:
+                self.__modules += file.readlines()
+            
         for index, module in enumerate(self.__modules):
-            options[str(index)] = [ tech_info for tech_info in module.strip().split('/')]
+            numb_options += index
+            options[str(numb_options)] = [ tech_info for tech_info in module.strip().split('/')]
+
         return options    
 
 

@@ -2,5 +2,8 @@ from src.TaskSolution.abstract_class import RunningFunctions
 
 class TestModule(RunningFunctions):
     def execute(self):
-        print('\nTest function\n')
+        print('----Test create object----')
+
+def test_func():
+    print('----Test call function----')
         
