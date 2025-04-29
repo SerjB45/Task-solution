@@ -1,2 +1,5 @@
-from src.TaskSolution import main
-main()
+from src.TaskSolution.main import App
+app = App()
+app.choise_option()
+
+    
