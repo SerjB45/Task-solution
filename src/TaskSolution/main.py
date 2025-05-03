@@ -51,15 +51,13 @@ class App(metaclass=Singltone):
 
     def get_options(self):
         options = { 'q' : ['exit', 'function'] }
-        numb_options = 0
         self.__modules = []
         for file in self.__infomodules:
             with open(file, 'r') as file:
                 self.__modules += file.readlines()
             
         for index, module in enumerate(self.__modules):
-            numb_options += index
-            options[str(numb_options)] = [ tech_info for tech_info in module.strip().split('/')]
+            options[str(index)] = [ tech_info for tech_info in module.strip().split('/')]
 
         return options    
 

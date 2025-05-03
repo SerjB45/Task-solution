@@ -1,4 +1,5 @@
 from src.TaskSolution.abstract_class import RunningFunctions
+# from src.TaskSolution.help_functions import time_memory_used
 
 class TestModule(RunningFunctions):
     def __init__(self):
@@ -21,6 +22,7 @@ class TestModule(RunningFunctions):
         print('Your message >>', mess)
            
 
+# @time_memory_used
 def test_func():
     print('----Test call function----')
         
