@@ -2,3 +2,6 @@ testmodule/test_func/function
 factorial/factorial_math/function
 factorial/my_factorial_1/function
 factorial/my_factorial_2/function
+recursion/recursion_sum/function
+recursion/recursion_max/function
+recursion/recursion_len/function
