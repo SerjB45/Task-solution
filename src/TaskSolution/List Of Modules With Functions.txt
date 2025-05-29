@@ -5,3 +5,6 @@ factorial/my_factorial_2/function
 recursion/recursion_sum/function
 recursion/recursion_max/function
 recursion/recursion_len/function
+number/revert_number/function
+number/prime_number/function
+number/fibonacci/function
