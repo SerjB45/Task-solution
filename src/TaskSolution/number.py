@@ -74,4 +74,27 @@ def fibonacci():
     print(specific_number_recursion(length))    
     print(specific_number_iterative(length))    
 
-           
+def max_value():
+    def inner_fn(*args):
+        maximum = args[0]
+        for i in args:
+            if i > maximum:
+                maximum = i
+                
+        return maximum        
+    
+    print(inner_fn(1, 5, 7))       
+    print(inner_fn(1, 35, 7, 10))
+    lst = [1, 35, 7, 10]       
+    print(inner_fn(*lst))       
+    print(inner_fn(6))
+
+    
+def swap():
+    def inner_fn(a, b):
+        a, b = b, a
+        return a, b
+    a = 1
+    b = 5
+    a, b = inner_fn(a, b)
+    print(a, b)           

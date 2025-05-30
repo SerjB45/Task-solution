@@ -8,3 +8,5 @@ recursion/recursion_len/function
 number/revert_number/function
 number/prime_number/function
 number/fibonacci/function
+number/max_value/function
+number/swap/function
