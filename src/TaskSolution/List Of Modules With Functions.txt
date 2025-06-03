@@ -10,3 +10,4 @@ number/prime_number/function
 number/fibonacci/function
 number/max_value/function
 number/swap/function
+number/factorize/function

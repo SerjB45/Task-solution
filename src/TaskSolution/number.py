@@ -98,3 +98,23 @@ def swap():
     b = 5
     a, b = inner_fn(a, b)
     print(a, b)           
+
+def factorize():
+   
+    def inner_fn(number):
+        left_portion = number
+        factors = []
+        index = 2
+        while left_portion != 1:
+            while left_portion % index == 0:
+                factors.append(index)
+                left_portion = left_portion / index
+            index += 1
+
+        return factors
+    
+    print(inner_fn(25))
+    print(inner_fn(52))
+    print(inner_fn(63))
+
+            
